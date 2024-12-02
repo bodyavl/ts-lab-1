@@ -1,1 +1,11 @@
-Ts Lab 1
+# Ts Lab 1
+
+## Install
+
+```bash
+npm i
+```
+
+## Run
+
+
