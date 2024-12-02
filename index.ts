@@ -60,7 +60,17 @@ interface Grade {
 
 class UniversityManagementSystem {
   private students: Student[] = [];
-  private courses: Course[] = [];
+  private courses: Course[] = [
+    {
+      id: 1,
+      name: "Introduction to Programming",
+      type: CourseType.Mandatory,
+      credits: 5,
+      semester: Semester.First,
+      faculty: Faculty.Computer_Science,
+      maxStudents: 2,
+    },
+  ];
   private grades: Grade[] = [];
   private studentCounter: number = 1;
 
@@ -98,13 +108,6 @@ class UniversityManagementSystem {
 
     if (!student || !course) {
       throw new Error("Invalid student or course ID");
-    }
-
-    const isRegistered = this.grades.some(
-      (g) => g.studentId === studentId && g.courseId === courseId
-    );
-    if (!isRegistered) {
-      throw new Error("Student is not registered for this course");
     }
 
     this.grades.push({
@@ -165,6 +168,7 @@ const student = ums.enrollStudent({
   enrollmentDate: new Date(),
   groupNumber: "CS-101",
 });
+
 console.log("New student:", student);
 
 ums.registerForCourse(student.id, 1);
