@@ -1,4 +1,4 @@
-# Ts Lab 1
+# Ts Lab 7
 
 ## Install
 
@@ -8,4 +8,6 @@ npm i
 
 ## Run
 
-
+```bash
+npm run start
+```
